@@ -1,16 +1,12 @@
-var x = "hello"
-var x = 1
-//bisa di redelcare
-console.log(x)
+import express from "express";
+import router from "./router/routes.js";
 
-let y = "hello"
-y = 1
-//tidak bisa di redeclare
-//bisa diuba valuenya aja
+const app = express();
+const PORT = 3000;
+app.use(express.json());                        
 
-console.log(y)
+app.use(router);
 
-const z = "hello"
-//tidak bisa di redeclare
-//tidak bisa di ubah valuenya
-console.log(z)
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+}); 
